@@ -1,23 +1,15 @@
 # -*- coding: utf-8 -*-
 
-#! pip list | grep boto
-#
-#!pip install boto3
-#!pip install pandas
-#!pip install sklearn
-#!pip install matplotlib
-#!pip install itertools
-
 AWS_SERVICE_S3 = 's3'
 AWS_S3_BUCKET_NAME
 AWS_ACCESS_KEY = ''
 AWS_SECRET_KEY = ''
 
-s3_client = boto3.client(service_name='AWS_SERVICE_S3', 
-                         aws_access_key_id='AWS_ACCESS_KEY',
-                         aws_secret_access_key='AWS_SECRET_KEY')
+s3_client = boto3.client(service_name = AWS_SERVICE_S3, 
+                         aws_access_key_id = AWS_ACCESS_KEY,
+                         aws_secret_access_key = AWS_SECRET_KEY)
 
-response = s3_client.create_bucket(Bucket= AWS_S3_BUCKET_NAME)
+response = s3_client.create_bucket(Bucket = AWS_S3_BUCKET_NAME)
 
 s3_client.download_file(AWS_S3_BUCKET_NAME, "regmodelo_2.json", "./regmodelo_2.json")
 
@@ -98,33 +90,6 @@ def DoPredict():
         X_teste.shape
         res_2 = loaded_model.predict(X_teste)
         return "Valores previstos: {}".format(res_2), 200
-
-
-## load json and create model
-#json_file = open('regmodelo_2.json', 'r')
-#loaded_model_json = json_file.read()
-#json_file.close()
-#loaded_model = model_from_json(loaded_model_json)
-## load weights into new model
-#loaded_model.load_weights("model.h5")
-#print("Loaded model from disk")
-#
-
-
-
-
-
-
-
-
-
-#X_teste = np.array([[2,30,1,0,1,2,1,19,3,3,0,0,0,2,2,0,1,27,0,1,135.9,0,0,17,21,13,15]])
-#print(X_teste)
-#X_teste.shape
-#
-#res_2 = loaded_model.predict(X_teste)
-#
-#print('valores previstos:\n'+str(res_2))
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
