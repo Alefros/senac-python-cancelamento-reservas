@@ -67,5 +67,5 @@ Lista de etapas necessárias para preparar o ambiente de execução
 - Transferir fonte via SSH para VM
 	> https://www.vivaolinux.com.br/dica/Copia-de-arquivos-por-SSH 
 
-#### 2 - Executar a API:
+#### 6 - Executar a API:
 - Executar o script python que cria a API e a torna disponível 
