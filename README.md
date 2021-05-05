@@ -41,12 +41,13 @@ Lista de serviços e dependências utilizadas:
 Lista de etapas necessárias para preparar o ambiente de execução
 
 #### 1 - Criar a instância EC2: 
-- Acesse o painel AWS, selecione o serviço EC2 e crie uma VM com o OS Ubuntu Server
+- Acesse o painel AWS, selecione o serviço EC2 e crie uma instância 
 	> https://aws.amazon.com/pt/ec2/getting-started/ 
+- Instale o Ubuntu server na instância criada 
 - Editar o security group que a VM pertence e adicionar as seguinte regras de entrada para acesso externo (Protocolo | Porta | Origem): 
 	> (SSH | 22 | 0.0.0.0/0) e (Custom TCP | 5000 | 0.0.0.0/0)
 	> https://docs.aws.amazon.com/pt_br/AWSEC2/latest/WindowsGuide/authorizing-access-to-an-instance.html
-	
+
 #### 2 - Preparar buckets S3: 
 - Crie os buckets para armazenar os modelos treinados
 - Crie um usuário programático com permissão de acesso ao bucket S3
