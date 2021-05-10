@@ -12,7 +12,7 @@ Lista de serviços e dependências utilizadas:
 -  **Flask:** Framework criar uma API em Python
 	 > Leia mais em: https://flask.palletsprojects.com/en/1.1.x/
 
-- **Boto3:** SDK AWS em Python
+- **Boto3:** SDK para comunicação com os serviços AWS em Python
 	> https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
 
 - **Pandas:** API em Python para análise de dados
@@ -43,6 +43,7 @@ Lista de etapas necessárias para preparar o ambiente de execução
 #### 1 - Criar a instância EC2: 
 - Acesse o painel AWS, selecione o serviço EC2 e crie uma instância 
 	> https://aws.amazon.com/pt/ec2/getting-started/ 
+- Crie sua chave .pem para realizar acesso SSH
 - Instale o Ubuntu server na instância criada 
 - Editar o security group que a VM pertence e adicionar as seguinte regras de entrada para acesso externo (Protocolo | Porta | Origem): 
 	> (SSH | 22 | 0.0.0.0/0) e (Custom TCP | 5000 | 0.0.0.0/0)
